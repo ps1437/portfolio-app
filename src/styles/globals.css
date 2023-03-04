@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .hero-btn{
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all 
+    hover:border-[#F7ab0a]/40 hover:text-[#F7ab0a]/40
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5c5959; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F7ab0A; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F7ab0A; 
+}
+  
+
