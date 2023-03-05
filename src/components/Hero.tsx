@@ -27,9 +27,8 @@ export default function Hero({ pageInfo }: Props) {
       <BackgroundCircle />
       <img
         alt="my pic"
-        className="relative rounded-full w-32 h-32 mx-auto object-contain"
+        className="relative rounded-full w-32 h-32 mx-auto object-cover"
         src={urlFor(pageInfo?.heroImage).url()}
-      //"https://media.licdn.com/dms/image/D5603AQGoBdRzt1N2aw/profile-displayphoto-shrink_800_800/0/1675961480482?e=1683158400&v=beta&t=-bql1OnPsn-2ukh6zpMwP3694w-9SGDaNb5pkMg2RR8"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">

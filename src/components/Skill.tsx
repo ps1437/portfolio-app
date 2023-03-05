@@ -14,14 +14,12 @@ export default function Skill({ directionLeft = false, skill }: Props) {
     <div className="group relative flex cursor-pointer">
       <motion.img
         initial={{
-          x: directionLeft ? -400 : 400,
           opacity: 0,
         }}
         transition={{
           duration: 0.5,
         }}
         whileInView={{
-          x: 0,
           opacity: 1,
         }}
         viewport={{

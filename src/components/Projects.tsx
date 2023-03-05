@@ -14,13 +14,12 @@ export default function Projects({ projects }: Props) {
          text-left
          md:flex-row
          max-w-full
-         px-10
          justify-evenly
          mx-auto
          items-center
         "
     >
-      <h3 className="absolute top-24  uppercase tracking-[20px] text-gray-500  text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500  text-2xl">
         Projects
       </h3>
 
@@ -28,7 +27,7 @@ export default function Projects({ projects }: Props) {
         {projects.map((project, index) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col md:space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
             <motion.img
               initial={{
@@ -46,23 +45,25 @@ export default function Projects({ projects }: Props) {
                 once: true,
               }}
               alt=""
-              className="h-40 w-40 flex items-center justify-center"
+              className=" h-36 w-36  md:h-40 md:w-40 flex items-center justify-center"
               src={urlFor(project?.image).url()}
             />
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl text-center font-semibold">
-                <span className="underline decoration-[#F7ab01]/50">
-                  Case Study {index + 1} of {projects.length} :
+            <div className="space-y-6 px-0 md:px-10 max-w-6xl">
+              <h4 className="text-2xl text-center font-semibold">
+              <span className=" text-sm decoration-[#F7ab01]/50">
+                  Project {index + 1} of {projects.length} 
                 </span>
-                {project?.title}
+              
+                <div className="underline">{project?.title} </div> 
               </h4>
-              <div className="flex items-center space-x-2 justify-center">
+              <div className="flex items-center  justify-center">
                 {project.technologies.map((tech, index) => (
                   <img
                     key={index}
                     src={urlFor(tech?.image).url()}
-                    className="h-10 w-10 "
-                    alt={tech?.title}
+                    className="h-8 w-8 cursor-pointer rounded-full "
+                    title={tech?.title}
+                    alt="skills"
                   />
                 ))}
               </div>

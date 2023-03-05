@@ -4,10 +4,10 @@ import Card from "./Card";
 import { Experience } from "types.ds";
 
 type Props = {
-  experiences:Experience[]
+  experiences: Experience[];
 };
 
-export default function WorkExperience({experiences}: Props) {
+export default function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
       initial={{
@@ -23,23 +23,20 @@ export default function WorkExperience({experiences}: Props) {
          text-left
          md:flex-row
          max-w-full
-         px-10
+         md:px-8
          justify-evenly
          mx-auto
          items-center
         "
     >
-      <h3 className="absolute top-16  uppercase tracking-[20px] text-gray-500  text-2xl">
+      <h3 className="absolute top-20  uppercase tracking-[20px] text-gray-500  text-2xl">
         Experience
       </h3>
       {/* Exp Cards */}
-      <div className="w-full mt-16 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7ab0A] flex  space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
-       
-       {experiences?.map(exp=>(
- <Card key={exp._id} exp={exp} />
-       ))}
-       
-    
+      <div className="w-full mt-16 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7ab0A] flex  space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory">
+        {experiences?.map((exp) => (
+          <Card key={exp._id} exp={exp} />
+        ))}
       </div>
     </motion.div>
   );

@@ -77,7 +77,7 @@ export default function home({
             <img
               alt="my pic"
               className="rounded-full w-10 h-10 filter grayscale hover:grayscale-0"
-              src={urlFor(pageInfo.heroImage).url()}
+              src={urlFor(pageInfo?.heroImage).url()}
             />
           </div>
         </footer>
