@@ -31,7 +31,7 @@ export default function About({ pageInfo }: Props) {
         className="
         mt-24 -mb-10 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover
         md:rounded-lg
-        md:w-64
+        md:w-64 
         md:h-96
         xl:w-[500px]
         xl:h-[500px]"
@@ -41,7 +41,7 @@ export default function About({ pageInfo }: Props) {
       <div className="space-y-10 px-0 mt-8 md:px-10">
         <h4 className="text-2xl md:text-3xl font-semibold">
           Here is a
-          <span className="underline decoration-[#f7ab0a]/50"> little </span>
+          <span className="underline decoration-secondary/50"> little </span>
           background
         </h4>
         <p className="text-base">{pageInfo?.aboutMe}</p>

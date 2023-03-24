@@ -34,9 +34,9 @@ export default function home({
 }: Props) {
   return (
     <div
-      className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
+      className="bg-[rgb(36,36,40)] text-white h-screen snap-y snap-mandatory
      overflow-scroll overflow-x-hidden z-0 
-     scrollbar-track-gray-400/20 scrollbar-thumb-[#F7ab0A]"
+     scrollbar-track-gray-400/20 scrollbar-thumb-secondary "
     >
       <Head> Personal portfolio</Head>
 

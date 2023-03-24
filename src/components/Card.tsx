@@ -7,7 +7,6 @@ type Props = {
   exp: Experience;
 };
 export default function Card({ exp }: Props) {
-  console.log(exp?.dateEnded);
   return (
     <article
       className="flex flex-col items-center  rounded-lg space-y-2 flex-shrink-0 w-full
@@ -59,7 +58,7 @@ overflow-hidden
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg h-60 max-h-60 
-        scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7ab0A]
+        scrollbar-thin scrollbar-track-black scrollbar-thumb-secondary
         overflow-y-scroll">
           {exp?.points.map((point, i) => (
             <li className="text-base" key={i}>{point}</li>

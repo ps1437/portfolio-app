@@ -19,7 +19,7 @@ export default function WorkExperience({ experiences }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="flex flex-col relative overflow-y-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7ab0A]  h-screen 
+      className="flex flex-col relative overflow-y-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary  h-screen 
          text-left
          md:flex-row
          max-w-full
@@ -33,7 +33,7 @@ export default function WorkExperience({ experiences }: Props) {
         Experience
       </h3>
       {/* Exp Cards */}
-      <div className="w-full mt-16 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7ab0A] flex  space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory">
+      <div className="w-full mt-16 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-secondary flex  space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory">
         {experiences?.map((exp) => (
           <Card key={exp._id} exp={exp} />
         ))}

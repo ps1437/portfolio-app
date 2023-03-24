@@ -23,7 +23,7 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-[#F7ab0A] flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-secondary flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
         {projects.map((project, index) => (
           <div
             key={project?._id}
@@ -75,7 +75,7 @@ export default function Projects({ projects }: Props) {
         ))}
       </div>
       <div
-        className="w-full absolute top-[30%] bg-[#F7ab0a]/10 left-0 h-[500px] 
+        className="w-full absolute top-[30%] bg-secondary/10 left-0 h-[500px] 
       -skew-y-12
       "
       ></div>
