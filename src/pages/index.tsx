@@ -72,7 +72,7 @@ export default function home({
         <Contact pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-10 w-full cursor-pointer">
           <div className=" flex justify-end items-end px-16">
             <img
               alt="my pic"

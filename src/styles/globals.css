@@ -13,6 +13,12 @@
   .header-title{
     @apply top-16 text-xl md:top-10  md:text-2xl uppercase tracking-[20px] text-gray-500  
   }
+  .contact-container{
+    @apply flex items-center  py-4 justify-center
+  }
+  .contact-font{
+    @apply px-2 text-xl
+  }
 }
 
 @layer base {
@@ -42,3 +48,13 @@
 }
   
 
+@keyframes wave {
+  0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}

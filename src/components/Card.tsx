@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Experience } from "types.ds";
-import { urlFor } from '../../sanity';
+import { urlFor } from "../../sanity";
 
 type Props = {
   exp: Experience;
@@ -9,7 +9,7 @@ type Props = {
 export default function Card({ exp }: Props) {
   return (
     <article
-      className="flex flex-col items-center  rounded-lg space-y-2 flex-shrink-0 w-full
+      className="flex flex-col items-center  rounded-lg flex-shrink-0 w-full
     md:w-[700px]
     xl:w-[500px]
     snap-center bg-[#292929] p-4
@@ -51,17 +51,21 @@ overflow-hidden
           ))}
         </div>
         <p className="uppercas py-5 text-gray-500 ">
-          {new Date(exp?.dateStarted).toLocaleDateString('en-US')} -{" "}
+          {new Date(exp?.dateStarted).toLocaleDateString("en-US")} -{" "}
           {exp?.isCurrentlyWorking
             ? "Present"
-            : new Date(exp?.dateEnded).toLocaleDateString('en-US')}
+            : new Date(exp?.dateEnded).toLocaleDateString("en-US")}
         </p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg h-60 max-h-60 
+        <ul
+          className="list-disc space-y-4 ml-5 text-lg h-60 max-h-60 
         scrollbar-thin scrollbar-track-black scrollbar-thumb-secondary
-        overflow-y-scroll">
+        overflow-y-scroll"
+        >
           {exp?.points.map((point, i) => (
-            <li className="text-base" key={i}>{point}</li>
+            <li className="text-base" key={i}>
+              {point}
+            </li>
           ))}
         </ul>
       </div>
