@@ -44,6 +44,8 @@ export interface PageInfo extends Common {
     mobileNo: string;
     profilePic: Image;
     heroImage: Image;
+    cityImage:Image;
+    scrollUp:Image;
 }
 
 

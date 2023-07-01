@@ -1,14 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components{
   .hero-btn{
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all 
-    hover:border-secondary/40 hover:text-secondary/40
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-400 transition-all 
+    hover:border-secondary/100 hover:text-secondary/80
+  }
+  .header-title{
+    @apply top-16 text-xl md:top-10  md:text-2xl uppercase tracking-[20px] text-gray-500  
   }
 }
 
+@layer base {
+  html {
+    font-family: "Playfair Display";
+  }
+}
 
 /* width */
 ::-webkit-scrollbar {

@@ -31,6 +31,26 @@ export default defineType({
       }
      
    }),
+   
+   defineField({
+    title: 'Scroll Up Image',
+    name: 'scrollUp',
+    type: 'image',
+    options: {
+      hotspot: true, // <-- Defaults to false
+    }
+   
+ }),
+
+   defineField({
+    title: 'City Image',
+    name: 'cityImage',
+    type: 'image',
+    options: {
+      hotspot: true, // <-- Defaults to false
+    }
+   
+ }),
 
     defineField({
       name: 'aboutMe',

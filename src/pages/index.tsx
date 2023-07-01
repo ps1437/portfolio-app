@@ -73,11 +73,11 @@ export default function home({
       </section>
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className=" flex justify-center items-center">
+          <div className=" flex justify-end items-end px-16">
             <img
               alt="my pic"
-              className="rounded-full w-10 h-10 filter grayscale hover:grayscale-0"
-              src={urlFor(pageInfo?.heroImage).url()}
+              className="rounded-full w-10 h-10 filter grayscale hover:grayscale-0 animate-bounce"
+              src={urlFor(pageInfo?.scrollUp).url()}
             />
           </div>
         </footer>

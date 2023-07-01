@@ -29,7 +29,7 @@ export default function WorkExperience({ experiences }: Props) {
          items-center
         "
     >
-      <h3 className="absolute top-20  uppercase tracking-[20px] text-gray-500  text-2xl">
+      <h3 className="absolute header-title">
         Experience
       </h3>
       {/* Exp Cards */}

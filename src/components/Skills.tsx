@@ -29,7 +29,7 @@ export default function Skills({ skills }: Props) {
          items-center
         "
     >
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500  text-2xl">
+      <h3 className="absolute header-title ">
         Skills
       </h3>
       <h3 className="absolute top-32 px-4 text-center   uppercase tracking-[3px] text-gray-500  text-sm">

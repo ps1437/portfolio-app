@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { PageInfo } from "types.ds";
+import { urlFor } from "../../sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -29,14 +30,22 @@ export default function Contact({ pageInfo }: Props) {
              items-center
             "
     >
-      <h3 className="absolute  top-20 md:top-24 uppercase tracking-[20px] text-gray-500  text-2xl">
+      <h3 className="absolute header-title">
         Contact
       </h3>
 
-      <div className="flex flex-col  space-y-10">
+
+
+
+      <div className="relative w-full justify-center  flex items-center   space-5 ">
+        <img
+        className="w-full md:w-1/2 object-center	"
+        src={urlFor(pageInfo?.cityImage).url()} />
+        <div className="absolute bottom-0 left-0 right-0 px-4   opacity-90 py-20">
+        <div className="flex flex-col  space-y-10 px-8">
         <h4 className="text-2xl font-semibold text-center">
-          I Have Got what u need
-          <span className="decoration-secondary/50 underline"> Lets Talk</span>
+         Contact 
+          <span className="decoration-secondary/50 underline text-[#F7ab0A]"> ME </span>
         </h4>
 
         <div className="flex flex-col items-center py-4 p-8 justify-center">
@@ -55,6 +64,10 @@ export default function Contact({ pageInfo }: Props) {
           </div>
         </div>
       </div>
+        </div>
+    </div>
+
+      
     </motion.div>
   );
 }
