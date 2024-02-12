@@ -13,7 +13,7 @@ export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
       `Hi, My Name is ${pageInfo.name} `,
-      "An Intresting Developer",
+      "An avid developer with interests in",
       "<java/>",
       "</React>",
       "</One Piece>",
@@ -26,7 +26,6 @@ export default function Hero({ pageInfo }: Props) {
     <motion.div className="h-screen flex flex-col space-y-8  items-center justify-center text-center overflow-hidden">
       <BackgroundCircle />
       <div className="relative">
-
 
       <img
         alt="my pic"
