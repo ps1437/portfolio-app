@@ -36,7 +36,6 @@ export const fetchProjects = async () => {
   return projects;
 };
 
-
 export const fetchExperience = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getExperience`);
