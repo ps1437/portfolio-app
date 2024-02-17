@@ -36,11 +36,23 @@ export const fetchProjects = async () => {
   return projects;
 };
 
+
 export const fetchExperience = async () => {
-  const response = await fetch(
-    `${process.env['NEXT_PUBLIC_API_URL']}/api/getExperience`
-  );
-  const data = await response.json();
-  const experiences: Experience[] = data.experiences;
-  return experiences;
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getExperience`);
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch experiences');
+    }
+
+    const data = await response.json();
+    const experiences: Experience[] = data.experiences;
+
+    experiences.sort((a, b) => (b.dateStarted.getTime() - a.dateStarted.getTime()));
+
+    return experiences;
+  } catch (error) {
+    console.error('Error fetching experiences:', error);
+    throw error; // Re-throw the error for the calling code to handle
+  }
 };
