@@ -46,16 +46,9 @@ export const fetchExperience = async () => {
 
     const data = await response.json();
     const experiences: Experience[] = data.experiences;
-
-    experiences.sort((a, b) => {
-      const dateA = a.dateStarted || new Date(0);
-      const dateB = b.dateStarted || new Date(0);
-      return dateB.getTime() - dateA.getTime();
-    });
-
     return experiences;
   } catch (error) {
     console.error('Error fetching experiences:', error);
-    throw error; // Re-throw the error for the calling code to handle
+    throw error; 
   }
 };
