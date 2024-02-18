@@ -46,6 +46,7 @@ export interface PageInfo extends Common {
     heroImage: Image;
     cityImage:Image;
     scrollUp:Image;
+    video: string; 
 }
 
 

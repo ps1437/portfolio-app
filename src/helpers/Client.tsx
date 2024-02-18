@@ -46,6 +46,7 @@ export const fetchExperience = async () => {
 
     const data = await response.json();
     const experiences: Experience[] = data.experiences;
+    experiences.sort((a, b) => new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime());
     return experiences;
   } catch (error) {
     console.error('Error fetching experiences:', error);
