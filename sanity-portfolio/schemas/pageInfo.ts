@@ -33,15 +33,6 @@ export default defineType({
    }),
    
    defineField({
-    title: 'Video',
-    name: 'video',
-    type: 'file',
-    options: {
-      accept: 'video/*',
-    },
-  }),
-  
-   defineField({
     title: 'Scroll Up Image',
     name: 'scrollUp',
     type: 'image',
