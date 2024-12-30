@@ -49,7 +49,7 @@ export interface PageInfo extends Common {
 }
 
 
-export interface Project extends Common {
+export interface ProjectType extends Common {
     _type: "pageInfo";
     title: string;
     image: Image;

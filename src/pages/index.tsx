@@ -39,13 +39,7 @@ const getRandomSize = () => {
   return Math.floor(Math.random() * (60 - 15 + 1)) + 15; // Random size between 15 and 60
 };
 
-const cubes = [
-{"size":50,"position":{"top":"-100px","right":"100px"},"backgroundColor":"rgb(86, 48, 61)"},
-{"size":40,"position":{"top":"-200px","right":"200px"},"backgroundColor":"rgb(96, 58, 71)"},
-{"size":36,"position":{"top":"-300px","right":"300px"},"backgroundColor":"rgb(96, 58, 71)"},
-{"size":28,"position":{"top":"-400px","right":"400px"},"backgroundColor":"rgb(96, 58, 71)"},
-{"size":18,"position":{"top":"-500px","right":"500px"},"backgroundColor":"rgb(96, 58, 71)"},
-]
+
 
 export default function home({
   pageInfo,
@@ -106,14 +100,7 @@ export default function home({
           </div>
      
       
-     {cubes.map((cube, index) => (
-        <Cube
-          key={index}
-          size={cube.size}
-          position={cube.position}
-          backgroundColor={cube.backgroundColor}
-        />
-      ))}
+    
         </footer>
       </Link>
      

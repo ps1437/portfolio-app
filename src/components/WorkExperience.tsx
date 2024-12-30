@@ -7,19 +7,20 @@ type Props = {
   experiences: Experience[];
 };
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+  exit: { opacity: 0, y: -50, transition: { duration: 1.5 } },
+};
+
 export default function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
-      className="flex flex-col relative overflow-y-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary  h-screen 
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={containerVariants}
+      className="flex flex-col relative overflow-y-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary h-screen 
          text-left
          md:flex-row
          max-w-full
@@ -33,7 +34,7 @@ export default function WorkExperience({ experiences }: Props) {
         Experience
       </h3>
       {/* Exp Cards */}
-      <div className="w-full md:mt-16 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-secondary flex  md:space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory">
+      <div className="w-full md:mt-16 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary flex md:space-x-5 overflow-x-scroll p-4 snap-x snap-mandatory">
         {experiences?.map((exp) => (
           <Card key={exp._id} exp={exp} />
         ))}

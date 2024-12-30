@@ -49,53 +49,54 @@ export default function About({ pageInfo }: Props) {
           <h3 className="text-2xl font-semibold"> What i like?</h3>
           <div className="flex justify-center items-center mt-4 md:items-center md:justify-center">
             <div>
-            <img
-              title="Coding"
-              className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-              src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202012/chris-ried-ieic5Tq8YMk-unsplas_1200x768.jpeg?size=690:388"
-              alt="coding"
-            /></div>  <div>
-            <a
-              target="_blank"
-              href="https://naruto.fandom.com/wiki/Naruto_Uzumaki"
-            >
               <img
-                title="Naruto"
+                title="Coding"
                 className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-                src="https://cdn140.picsart.com/355182439052201.jpg?to=crop&type=webp&r=310x310&q=75"
-                alt="naruto"
-              />
-            </a></div>
-<div>
-            <a target="_blank" href="https://en.wikipedia.org/wiki/One_Piece ">
-              <img
-                title="One Piece"
-                className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-                src="https://i.pinimg.com/736x/81/b8/1b/81b81b38c72e148ce4ddfcae172733f0.jpg"
-                alt="OnePiece"
-              />
-            </a> 
+                src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202012/chris-ried-ieic5Tq8YMk-unsplas_1200x768.jpeg?size=690:388"
+                alt="coding"
+              /></div>  
+              <div>
+              <a
+                target="_blank"
+                href="https://naruto.fandom.com/wiki/Naruto_Uzumaki"
+              >
+                <img
+                  title="Naruto"
+                  className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
+                  src="https://cdn140.picsart.com/355182439052201.jpg?to=crop&type=webp&r=310x310&q=75"
+                  alt="naruto"
+                />
+              </a></div>
+            <div>
+              <a target="_blank" href="https://en.wikipedia.org/wiki/One_Piece ">
+                <img
+                  title="One Piece"
+                  className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
+                  src="https://i.pinimg.com/736x/81/b8/1b/81b81b38c72e148ce4ddfcae172733f0.jpg"
+                  alt="OnePiece"
+                />
+              </a>
             </div><div>
-            <img
-              title="Gaming"
-              className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-              src="https://img.freepik.com/free-vector/skull-gaming-with-joy-stick-emblem-modern-style_32991-492.jpg?w=2000"
-              alt="Gaming"
-            />
-      </div><div>
-            <img
-              title="WaterFalls"
-              className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-              src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXJmYWxsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-              alt="WaterFalls"
-            />
-      </div><div>
-            <img
-              title="Bike Riding"
-              className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
-              src="https://www.carmycar.com/wp-content/uploads/2021/04/Bike-Riding.jpg"
-              alt="Bike Riding"
-            />
+              <img
+                title="Gaming"
+                className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
+                src="https://img.freepik.com/free-vector/skull-gaming-with-joy-stick-emblem-modern-style_32991-492.jpg?w=2000"
+                alt="Gaming"
+              />
+            </div><div>
+              <img
+                title="WaterFalls"
+                className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
+                src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXJmYWxsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                alt="WaterFalls"
+              />
+            </div><div>
+              <img
+                title="Bike Riding"
+                className=" w-20 h-20 border border-white border-2   filter grayscale hover:grayscale-0"
+                src="https://www.carmycar.com/wp-content/uploads/2021/04/Bike-Riding.jpg"
+                alt="Bike Riding"
+              />
             </div>
           </div>
         </p>
