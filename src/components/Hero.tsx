@@ -34,17 +34,28 @@ export default function Hero({ pageInfo }: Props) {
 
   return (
     <motion.div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+  
+   <div className="spider-container">
+    <div className="web-line"></div>
+    <img src="spider.png" className="spider -z-500" alt="Spider" />
+  </div>
+
+    <div className="spider-container">
+    <div className="web-line2"></div>
+    <img src="spider.png" className="spider2 -z-500" alt="Spider" />
+  </div>
+
       <BackgroundCircle />
       <div className="relative">
         <img
           alt="my pic"
           className="relative rounded-full w-32 h-32 mx-auto object-cover cursor-pointer 
-           -top-10 left-0
+           -top-50 left-0
            hover:shadow-outline"
           src={urlFor(pageInfo?.heroImage).url()}
         />
         <img
-          className="w-32 h-32 mx-auto absolute -top-20 -left-10 animate-waving-hand"
+          className="w-32 h-32 mx-auto absolute -top-16 -left-10 animate-waving-hand"
           alt="straw hat"
           src="https://png.pngtree.com/png-vector/20230120/ourmid/pngtree-straw-hat-cartoon-illustration-png-image_6562738.png"
         />

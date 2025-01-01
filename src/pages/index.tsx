@@ -54,7 +54,7 @@ export default function home({
     <div
       className="bg-[rgb(36,36,40)] text-white h-screen snap-y snap-mandatory
      overflow-scroll overflow-x-hidden z-0 
-     scrollbar-track-gray-400/20 scrollbar-thumb-secondary "
+     scrollbar-track-gray-400/20 scrollbar-thumb-secondary transition-transform duration-700 ease-in-out"
     >
       <Head> Personal portfolio</Head>
 
@@ -67,40 +67,38 @@ export default function home({
       </section>
 
       {/* About */}
-      <section id="about" className="snap-center">
+      <section id="about" className="snap-center transition-transform duration-700 ease-in-out">
         <About pageInfo={pageInfo} />
       </section>
       {/* About */}
-      <section id="exp" className="snap-center">
+      <section id="exp" className="snap-center transition-transform duration-700 ease-in-out">
         <WorkExperience experiences={experiences} />
       </section>
 
       {/* skills */}
-      <section id="skills" className="snap-center">
+      <section id="skills" className="snap-center transition-transform duration-700 ease-in-out">
         <Skills skills={skills} />
       </section>
 
       {/* Project */}
-      <section id="projects" className="snap-center">
+      <section id="projects" className="snap-center transition-transform duration-700 ease-in-out">
         <Projects projects={projects} />
       </section>
 
       {/* contact */}
-      <section id="contact" className="snap-center">
+      <section id="contact" className="snap-center transition-transform duration-700 ease-in-out">
         <Contact pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-10 w-full cursor-pointer">
+        <footer className="sticky bottom-20 w-full cursor-pointer">
           <div className=" flex justify-end items-end px-16">
             <img
               alt="my pic"
-              className="rounded-full w-10 h-10 filter grayscale hover:grayscale-0 animate-bounce"
-              src={urlFor(pageInfo?.scrollUp).url()}
+              className="rounded w-10 h-10 filter animate-bounce"
+              src='gokuup.png'
             />
           </div>
      
-      
-    
         </footer>
       </Link>
      

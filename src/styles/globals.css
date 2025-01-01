@@ -1,4 +1,3 @@
-
 /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
 
 @tailwind base;
@@ -9,24 +8,26 @@
 @font-face {
   font-family: 'woff2';
   src: url('CrampsRegular-OV7od.ttf') format('woff2'),
-       url('CrampsRegular-OV7od.ttf') format('woff');
+    url('CrampsRegular-OV7od.ttf') format('woff');
   /* Add additional formats as needed */
   font-weight: normal;
   font-style: normal;
 }
 
-@layer components{
-  .hero-btn{
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-400 transition-all 
-    hover:border-secondary/100 hover:text-secondary/80
+@layer components {
+  .hero-btn {
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-400 transition-all hover:border-secondary/100 hover:text-secondary/80
   }
-  .header-title{
-    @apply top-16 text-xl md:top-10  md:text-2xl uppercase tracking-[20px] text-gray-500  
+
+  .header-title {
+    @apply top-16 text-xl md:top-10 md:text-2xl uppercase tracking-[20px] text-gray-500
   }
-  .contact-container{
-    @apply flex items-center  py-4 justify-center
+
+  .contact-container {
+    @apply flex items-center py-4 justify-center
   }
-  .contact-font{
+
+  .contact-font {
     @apply px-2 text-xl
   }
 }
@@ -44,28 +45,122 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #5c5959; 
+  background: #5c5959;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #F7ab0A; 
+  background: #F7ab0A;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #F7ab0A; 
+  background: #F7ab0A;
 }
-  
+
 
 @keyframes wave {
-  0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
+  0% {
+    transform: rotate(0.0deg)
+  }
+
+  10% {
+    transform: rotate(14.0deg)
+  }
+
+  20% {
+    transform: rotate(-8.0deg)
+  }
+
+  30% {
+    transform: rotate(14.0deg)
+  }
+
+  40% {
+    transform: rotate(-4.0deg)
+  }
+
+  50% {
+    transform: rotate(10.0deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  100% {
+    transform: rotate(0.0deg)
+  }
 }
 
+
+.spider-container {
+  position: relative;
+  width: 100vw;
+}
+
+.web-line {
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 2px;
+  height: 0;
+  background-color: #000;
+  animation: drop-web 6s ease-in-out infinite;
+}
+
+.web-line2 {
+  position: absolute;
+  top: 0;
+  left: 90%;
+  width: 2px;
+  height: 0;
+  background-color: #000;
+  animation: drop-web 6s ease-in-out infinite;
+}
+
+.spider2 {
+  position: absolute;
+  top: -50px;
+  left: 90%;
+  transform: translateX(-50%);
+  width: 30px;
+  animation: drop-spider 6s ease-in-out infinite;
+}
+
+.spider {
+  position: absolute;
+  top: -50px;
+  left: 80%;
+  transform: translateX(-50%);
+  width: 60px;
+  animation: drop-spider 6s ease-in-out infinite;
+}
+
+@keyframes drop-web {
+  0% {
+    height: 0;
+  }
+
+  50% {
+    height: 90%;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes drop-spider {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 90%;
+  }
+
+  100% {
+    top: -100px;
+  }
+}
