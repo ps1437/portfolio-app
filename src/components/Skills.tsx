@@ -19,22 +19,13 @@ export default function Skills({ skills }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="flex flex-col relative overflow-hidden  h-screen 
-         text-left
-         md:flex-row
-         max-w-full
-         px-10
-         justify-evenly
-         mx-auto
-         items-center
-        "
+      className="flex flex-col relative overflow-hidden h-screen text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute header-title ">
-        Skills
-      </h3>
-      <h3 className="absolute top-32 px-4 text-center   uppercase tracking-[3px] text-gray-500  text-sm">
-      Hover over a skill to view current proficiency level.</h3>
-      <div className="grid grid-cols-3 gap-3 gap-x-5 md:gap-5 md:grid-cols-4  mt-10 ">
+      <h3 className="absolute header-title">Skills</h3>
+      <h3 className="absolute md:hidden top-32 md:top-20 px-4 text-center uppercase tracking-[3px] text-gray-500 text-sm">
+        Hover over a skill to view current proficiency level
+      </h3> 
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-x-2 md:gap-2 mt-10 w-full">
         {skills?.map((skill, i) => (
           <Skill key={skill._id} directionLeft={i % 2 == 0} skill={skill} />
         ))}
