@@ -10,61 +10,42 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 flex items-center justify-between max-w-7xl mx-auto z-40 p-4 xl:item-center">
-      {/* social icons */}
-
+    <header className="sticky top-0 flex items-center justify-between max-w-7xl mx-auto z-40 p-4  bg-opacity-60 ">
       <motion.div
-        initial={{
-          x: -500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1.5,
-        }}
-        className="  flex flex-row items-center"
+        initial={{ x: -500, opacity: 0, scale: 0.5 }}
+        animate={{ x: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-row items-center space-x-2"
       >
         {socials.map((social) => (
-          <SocialIcon
+          <div
             key={social._id}
-            url={social.url}
-            bgColor="transparent"
-            className="hover:bg-white rounded-full"
-            fgColor="gray"
-          />
+            className="transition-transform duration-300 hover:scale-110 hover:shadow-cyan animate-glow"
+          >
+            <SocialIcon
+              url={social.url}
+              bgColor="transparent"
+              fgColor="#facc15" // Tailwind yellow-400
+              className="rounded-full"
+            />
+          </div>
         ))}
       </motion.div>
 
-      {/* Email Info */}
       <motion.div
-        initial={{
-          x: 500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1.5,
-        }}
-        className="flex flex-row items-center cursor-pointer text-gray-400"
+        initial={{ x: 500, opacity: 0, scale: 0.5 }}
+        animate={{ x: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-row items-center cursor-pointer text-yellow-400 animate-pulse"
       >
-        <Link href="#contact">
+        <Link href="#contact" className="flex items-center space-x-2">
           <SocialIcon
             bgColor="transparent"
-            fgColor="gray"
-            className="cursor-pointer"
+            fgColor="#facc15"
+            className="cursor-pointer hover:scale-110 transition-transform"
             network="email"
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <p className="uppercase hidden md:inline-flex text-sm font-anime tracking-wider">
             GET IN TOUCH
           </p>
         </Link>

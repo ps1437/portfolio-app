@@ -25,6 +25,19 @@ module.exports = {
       'waving-hand': 'wave 2s linear infinite',
     },
     extend: {
+       animation: {
+        'kamehameha': 'kamehameha 2s ease-in-out infinite',
+      },
+       keyframes: {
+        kamehameha: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.6' },
+          '50%': { transform: 'scale(1.4)', opacity: '0.2' },
+        },
+      },
+       fontFamily: {
+        anime: ['"Luckiest Guy"', 'cursive'],
+        manga: ['"Permanent Marker"', 'cursive'],
+      },
       colors: {
         'secondary': '#f7ab0a',
       }

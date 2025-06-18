@@ -28,19 +28,19 @@ export default function BackgroundCircle({}: Props) {
       className="relative flex justify-center items-center mt-16"
     >
       <motion.div
-        className="absolute border border-red-500 opacity-60 rounded-full h-[200px] w-[200px] mt-52"
+        className="absolute border border-yellow-500 opacity-60 rounded-full h-[200px] w-[200px] mt-52"
         variants={zigzagVariants}
         initial="initial"
         animate="animate"
       />
       <motion.div
-        className="rounded-full border border-blue-500 opacity-20 h-[500px] w-[500px] absolute mt-52"
+        className="rounded-full border border-green-500 opacity-20 h-[500px] w-[500px] absolute mt-52"
         variants={zigzagVariants}
         initial="initial"
         animate="animate"
       />
       <motion.div
-        className="rounded-full border border-green-500 opacity-20 h-[650px] w-[650px] absolute mt-52"
+        className="rounded-full border border-white opacity-20 h-[650px] w-[650px] absolute mt-52"
         variants={zigzagVariants}
         initial="initial"
         animate="animate"
