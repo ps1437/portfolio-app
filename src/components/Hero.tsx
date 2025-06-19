@@ -49,13 +49,12 @@ export default function Hero({ pageInfo }: Props) {
       </div>
 
 
-      {/* Text Section */}
       <div className="z-20">
         <h2 className="text-md uppercase text-yellow-200 pb-2 tracking-[12px] font-anime">
           {pageInfo?.role}
         </h2>
 
-        <h1 className="text-4xl lg:text-5xl font-anime px-10 text-yellow-300 drop-shadow-lg">
+        <h1 className="text-4xl p-8 lg:text-5xl font-anime px-10 text-yellow-300 drop-shadow-lg">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#facc15" />
         </h1>

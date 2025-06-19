@@ -7,7 +7,7 @@ export default function AnimeCard() {
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="relative group w-64 h-80 overflow-hidden rounded-2xl shadow-2xl border-4 border-yellow-400 bg-black spark-container"
+      className="relative group hidden md:block w-64 h-80 overflow-hidden rounded-2xl shadow-2xl border-4 border-yellow-400 bg-black spark-container"
     >
       <div className="absolute -inset-2 bg-gradient-to-br from-yellow-400 via-blue-500 to-transparent blur-xl opacity-30 animate-pulse z-0 rounded-2xl" />
 
