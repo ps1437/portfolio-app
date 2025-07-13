@@ -17,6 +17,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Experience, PageInfo, Project, Skill, Social } from "types.ds";
 import { urlFor } from "../../sanity";
+import BackToTop from "@/components/BackToTop";
 
 type Props = {
   pageInfo: PageInfo;
@@ -52,8 +53,8 @@ export default function home({
   return (
     
     <div
-      className="bg-[rgb(36,36,40)] text-white h-screen snap-y snap-mandatory
-     overflow-scroll overflow-x-hidden z-0 
+      className="h-screen snap-y snap-mandatory
+     overflow-scroll overflow-x-hidden z-0   bg-gray-900 text-white bg-cover bg-center
      scrollbar-track-gray-400/20 scrollbar-thumb-secondary transition-transform duration-700 ease-in-out"
     >
       <Head> Personal portfolio</Head>
@@ -89,18 +90,9 @@ export default function home({
       <section id="contact" className="snap-center transition-transform duration-700 ease-in-out">
         <Contact pageInfo={pageInfo} />
       </section>
-      <Link href="#hero">
-        <footer className="sticky bottom-20 w-full cursor-pointer">
-          <div className=" flex justify-end items-end px-16">
-            <img
-              alt="my pic"
-              className="rounded w-10 h-10 filter animate-bounce"
-              src='gokuup.png'
-            />
-          </div>
-     
-        </footer>
-      </Link>
+    
+      <BackToTop/>
+    
      
 
     </div>
