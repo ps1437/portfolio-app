@@ -38,6 +38,19 @@ body {
   position: relative;
 }
 
+@keyframes dragonGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(255, 204, 0, 0.4), 0 0 20px rgba(255, 204, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.9), 0 0 40px rgba(255, 204, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(255, 204, 0, 0.4), 0 0 20px rgba(255, 204, 0, 0.7);
+  }
+}
+
+
 .spark-layer::before {
   content: "";
   position: absolute;

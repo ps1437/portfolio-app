@@ -26,6 +26,8 @@ module.exports = {
     },
     extend: {
        animation: {
+                dragonGlow: "dragonGlow 1.5s infinite",
+
         'kamehameha': 'kamehameha 2s ease-in-out infinite',
       },
        keyframes: {

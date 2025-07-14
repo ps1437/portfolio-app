@@ -11,8 +11,8 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 z-50  shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+<header className="sticky top-0 z-50 bg-gray-900/40 backdrop-blur-md shadow-md">
+      <div className="max-w-7xl  mx-auto flex items-center justify-between px-4 py-3">
         <motion.div
           initial={{ x: -200, opacity: 0, scale: 0.8 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ export default function Header({ socials }: Props) {
           {socials.map((social) => (
             <div
               key={social._id}
-              className="transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_6px_#facc15]"
+              className="transition-transform font-mono duration-300 hover:scale-110 hover:drop-shadow-[0_0_6px_#facc15]"
             >
               <SocialIcon
                 url={social.url}

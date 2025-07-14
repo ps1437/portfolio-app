@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { PageInfo } from "types.ds";
 import { urlFor } from "../../sanity";
@@ -45,8 +43,6 @@ export default function Hero({ pageInfo }: Props) {
       <section className="mt-10 p-4">
         <div className="w-full md:w-1/2 md:mx-auto flex flex-col
          md:flex-row items-center justify-center text-center">
-
-
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}

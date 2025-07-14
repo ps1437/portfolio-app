@@ -1,7 +1,8 @@
+"use client";
+
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { PageInfo } from "types.ds";
-import { urlFor } from "../../sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -9,54 +10,60 @@ type Props = {
 
 export default function Contact({ pageInfo }: Props) {
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
-      className="flex flex-col relative overflow-hidden h-screen text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="relative w-full py-24 px-6 sm:px-10 bg-[#0b0c1a] overflow-hidden"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
-        Contact
+      <h3 className="text-4xl font-mono sm:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-16">
+        Contact Me
       </h3>
 
-      <div className="relative w-full flex justify-center items-center mt-20">
-        <img
-          className="w-full md:w-1/2 object-cover rounded-lg shadow-lg"
-          src={urlFor(pageInfo?.cityImage).url()}
-          alt="City"
-        />
-        <div className="absolute bottom-0 left-0 right-0 px-4 py-20 bg-gradient-to-t from-black via-transparent to-transparent opacity-90">
-          <div className="flex flex-col space-y-10 px-8">
-            <h4 className="text-3xl font-semibold text-center text-white">
-              Get in <span className="underline decoration-secondary/50 text-[#F7ab0A]">Touch</span>
-            </h4>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-xl mx-auto bg-[#161a2b] border border-white/10 shadow-md hover:shadow-yellow-400/20 transition rounded-2xl p-8 sm:p-12 space-y-10"
+      >
+        <h4 className="text-xl sm:text-2xl font-semibold text-center text-white">
+          Let’s <span className="text-yellow-300 underline underline-offset-4">Connect</span>
+        </h4>
 
-            <div className="flex flex-col items-center space-y-4">
-              <div className="contact-container flex items-center space-x-4">
-                <PhoneIcon className="text-secondary h-7 w-7 animate-pulse" />
-                <p className="text-lg text-white">{pageInfo?.mobileNo}</p>
-              </div>
+        <div className="flex flex-col space-y-6 text-white">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-4"
+          >
+            <PhoneIcon className="h-7 w-7 text-pink-400 animate-pulse" />
+            <p className="text-base">{pageInfo?.mobileNo}</p>
+          </motion.div>
 
-              <div className="contact-container flex items-center space-x-4">
-                <EnvelopeIcon className="text-secondary h-7 w-7 animate-pulse" />
-                <p className="text-lg text-white">{pageInfo?.emailId}</p>
-              </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center space-x-4"
+          >
+            <EnvelopeIcon className="h-7 w-7 text-yellow-400 animate-pulse" />
+            <p className="text-base break-words">{pageInfo?.emailId}</p>
+          </motion.div>
 
-              <div className="contact-container flex items-center space-x-4">
-                <MapIcon className="text-secondary h-7 w-7 animate-pulse" />
-                <p className="text-lg text-white">{pageInfo?.address}</p>
-              </div>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center space-x-4"
+          >
+            <MapIcon className="h-7 w-7 text-blue-400 animate-pulse" />
+            <p className="text-base">{pageInfo?.address}</p>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-    </motion.div>
+      <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[60%] h-40 bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 blur-3xl opacity-10 rounded-full" />
+    </motion.section>
   );
 }

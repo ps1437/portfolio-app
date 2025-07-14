@@ -7,66 +7,43 @@ type Props = {
 
 export default function Projects({ projects }: Props) {
   return (
-    <div
-      className="flex flex-col relative overflow-hidden  
-         text-left
-         md:flex-row
-         max-w-full
-         justify-evenly
-         mx-auto
-         items-center
-        "
-    >
-      <h3 className="absolute header-title">
+    <section className="bg-black py-20 px-4 sm:px-6 lg:px-8">
+      <h3 className="text-4xl font-bold font-mono text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-16">
         Projects
       </h3>
 
-      <div className="relative scrollbar-track-gray-400/20
-      scrollbar-thin scrollbar-thumb-secondary 
-      flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
-
-
-        {projects.map((project, index) => (
-
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {projects.map((project) => (
           <div
-            onClick={() => window.open(project?.linkToBuild, "_blank")}
             key={project._id}
-            className={`
-            w-screen flex-shrink-0 snap-center
-            flex flex-col md:space-y-5 items-center justify-center
-            p-4 md:p-44 h-screen
-            cursor-pointer
-
-            overflow-x-auto overflow-y-hidden
-            scrollbar-thin
-            scrollbar-track-gray-400/20
-            scrollbar-thumb-secondary
-          `}
+            onClick={() => window.open(project?.linkToBuild, "_blank")}
+            className="group rounded-xl overflow-hidden bg-[#1a1a1a] shadow-md hover:shadow-yellow-400/30 transition duration-300 shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-indigo-600/100 border-4 border-indigo-600 cursor-pointer relative"
           >
+            <div className="relative w-full  overflow-hidden">
+              <img
+                src={urlFor(project?.image).url()}
+                alt={project.title}
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+              />
 
-
-            <div className="relative w-full  md:w-3/4">
-              <img src={urlFor(project?.image).url()} />
-              <div className="absolute -bottom-10 md:bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 
-              opacity-90">
-                <h3 className="text-xl text-white font-bold">
-                  {project?.title} </h3>
-                <p className="mt-2 text-sm text-gray-300">
-                  {project?.summary}</p>
+              <div className="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <h4 className="text-white text-lg font-semibold">
+                  {project.title}
+                </h4>
+                <p className="text-sm text-gray-300 mt-1 line-clamp-3">
+                  {project.summary}
+                </p>
               </div>
             </div>
 
-            <span className=" text-sm decoration-[#F7ab01]/50 mt-12 ">
-              Project {index + 1} of {projects.length}
-            </span>
+            <div className="px-4 py-3">
+              <h5 className="text-yellow-400 font-semibold text-sm truncate">
+                {project.title}
+              </h5>
+            </div>
           </div>
         ))}
       </div>
-      <div
-        className="w-full absolute top-[30%] bg-secondary/10 left-0 h-[500px] 
-      -skew-y-12
-      "
-      ></div>
-    </div>
+    </section>
   );
 }

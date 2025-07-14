@@ -1,35 +1,109 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Skill as SkillType } from "types.ds";
-import Skill from "./Skill";
+import { urlFor } from "../../sanity";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 type Props = {
   skills: SkillType[];
 };
 
 export default function Skills({ skills }: Props) {
+  const [particlesInit, setParticlesInit] = useState(null);
+
+  useEffect(() => {
+    loadSlim(particlesInit); // only slim to reduce size
+  }, []);
+
+  const sortedSkills = [...skills].sort((a, b) => {
+    if (a.title.toLowerCase() === "java") return -1;
+    if (b.title.toLowerCase() === "java") return 1;
+    return 0;
+  });
+
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
-      className="flex flex-col relative overflow-hidden h-screen text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
-    >
-      <h3 className="absolute header-title">Skills</h3>
-      <h3 className="absolute md:hidden top-32 md:top-20 px-4 text-center uppercase tracking-[3px] text-gray-500 text-sm">
-        Hover over a skill to view current proficiency level
-      </h3> 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 gap-x-2 md:gap-2 mt-10 w-full">
-        {skills?.map((skill, i) => (
-          <Skill key={skill._id} directionLeft={i % 2 == 0} skill={skill} />
+    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-12 bg-[#0b0c1a] overflow-hidden">
+      <Particles
+        id="tsparticles"
+        init={setParticlesInit}
+        options={{
+          fullScreen: false,
+          background: { color: "#0b0c1a" },
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: "repulse" },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 100, duration: 0.4 },
+            },
+          },
+          particles: {
+            color: { value: "#facc15" },
+            links: {
+              color: "#facc15",
+              distance: 120,
+              enable: true,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: "bounce",
+              speed: 1.5,
+            },
+            number: { density: { enable: true, area: 800 }, value: 40 },
+            opacity: { value: 0.4 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 3 } },
+          },
+        }}
+        className="absolute inset-0 z-0"
+      />
+
+      <motion.h3
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-mono sm:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-12 relative z-10"
+      >
+        My Skills
+      </motion.h3>
+
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 relative z-10">
+        {sortedSkills.map((skill, index) => (
+          <motion.div
+            key={skill._id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            className="bg-[#1e2130] hover:bg-[#2a2e43] p-4 rounded-xl flex flex-col items-center justify-center shadow-md hover:shadow-yellow-400/40 transition-all"
+          >
+            <img
+              src={urlFor(skill.image).url()}
+              alt={skill.title}
+              title={skill.title}
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain mb-2"
+            />
+            <p className="text-sm text-white font-medium">{skill.title}</p>
+            <div className="w-full mt-2 bg-gray-700 rounded-full h-2">
+              <div
+                className="bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 h-2 rounded-full"
+                style={{ width: `${skill.progress}%` }}
+              />
+            </div>
+            <span className="text-[10px] text-gray-400 mt-1">
+              {+skill.progress}%
+            </span>
+          </motion.div>
         ))}
       </div>
-    </motion.div>
+    </section>
   );
 }
