@@ -4,7 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { loadFull } from "tsparticles";
 import type { PageInfo } from "types.ds";
-import { urlFor } from "../../sanity";
+import { urlFor } from "../../../sanity";
 
 type Props = {
   pageInfo: PageInfo;

@@ -1,4 +1,4 @@
-import { Experience, PageInfo, Project, Skill, Social } from "../../types.ds";
+import { Experience, PageInfo, ProjectType, Skill, Social } from "../../../types.ds";
 
 export const fetchSkill = async () => {
   const response = await fetch(
@@ -32,7 +32,7 @@ export const fetchProjects = async () => {
     `${process.env['NEXT_PUBLIC_API_URL']}/api/getProjects`
   );
   const data = await response.json();
-  const projects: Project[] = data.projects;
+  const projects: ProjectType[] = data.projects;
   return projects;
 };
 

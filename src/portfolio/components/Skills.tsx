@@ -1,22 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Skill as SkillType } from "types.ds";
-import { urlFor } from "../../sanity";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { Skill as SkillType } from "types.ds";
+import { urlFor } from "../../../sanity";
 
 type Props = {
   skills: SkillType[];
 };
 
 export default function Skills({ skills }: Props) {
-  const [particlesInit, setParticlesInit] = useState(null);
-
-  useEffect(() => {
-    loadSlim(particlesInit); // only slim to reduce size
-  }, []);
+  const particlesInit = async (engine: any) => {
+    await loadSlim(engine);
+  };
 
   const sortedSkills = [...skills].sort((a, b) => {
     if (a.title.toLowerCase() === "java") return -1;
@@ -25,13 +22,11 @@ export default function Skills({ skills }: Props) {
   });
 
   return (
-    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-12 bg-[#0b0c1a] overflow-hidden">
+    <section className="relative w-full py-20 px-4 sm:px-6 lg:px-12 overflow-hidden">
       <Particles
         id="tsparticles"
-        init={setParticlesInit}
+        init={particlesInit}
         options={{
-          fullScreen: false,
-          background: { color: "#0b0c1a" },
           fpsLimit: 60,
           interactivity: {
             events: {
@@ -70,10 +65,11 @@ export default function Skills({ skills }: Props) {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-mono sm:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-12 relative z-10"
+        className="text-4xl font-mono sm:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-300  mb-12 relative z-10"
       >
         My Skills
       </motion.h3>
+
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 relative z-10">
         {sortedSkills.map((skill, index) => (

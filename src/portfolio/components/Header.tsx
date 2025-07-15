@@ -11,7 +11,7 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-<header className="sticky top-0 z-50 bg-gray-900/40 backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-50 bg-gray-900/40 backdrop-blur-md shadow-md">
       <div className="max-w-7xl  mx-auto flex items-center justify-between px-4 py-3">
         <motion.div
           initial={{ x: -200, opacity: 0, scale: 0.8 }}
@@ -42,14 +42,19 @@ export default function Header({ socials }: Props) {
           transition={{ duration: 1 }}
           className="hidden md:flex space-x-6 font-mono text-sm uppercase tracking-wide text-yellow-300"
         >
-          {["about", "experience", "skills", "projects", "contact"].map((section) => (
-            <Link key={section} href={`#${section}`}>
+          {["about", "experience", "skills", "projects", "contact", "quiz"].map((section) => (
+            <Link
+              key={section}
+              href={section === "quiz" ? "/quiz" : `#${section}`}
+              scroll={section !== "quiz"}
+            >
               <span className="cursor-pointer hover:text-yellow-400 transition duration-300 hover:underline underline-offset-4">
                 {section}
               </span>
             </Link>
           ))}
         </motion.nav>
+
 
         {/* Contact (Mobile & Desktop) */}
         <motion.div

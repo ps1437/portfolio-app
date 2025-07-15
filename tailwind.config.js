@@ -4,7 +4,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
@@ -25,18 +25,18 @@ module.exports = {
       'waving-hand': 'wave 2s linear infinite',
     },
     extend: {
-       animation: {
-                dragonGlow: "dragonGlow 1.5s infinite",
+      animation: {
+        dragonGlow: "dragonGlow 1.5s infinite",
 
         'kamehameha': 'kamehameha 2s ease-in-out infinite',
       },
-       keyframes: {
+      keyframes: {
         kamehameha: {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.6' },
           '50%': { transform: 'scale(1.4)', opacity: '0.2' },
         },
       },
-       fontFamily: {
+      fontFamily: {
         anime: ['"Luckiest Guy"', 'cursive'],
         manga: ['"Permanent Marker"', 'cursive'],
       },
@@ -44,7 +44,7 @@ module.exports = {
         'secondary': '#f7ab0a',
       }
     },
-    
+
   },
   plugins: [
     require('tailwind-scrollbar'),
