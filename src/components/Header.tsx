@@ -11,7 +11,7 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-<header className="sticky top-0 z-50 bg-gray-900/40 backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-50 bg-gray-900/40 backdrop-blur-md shadow-md">
       <div className="max-w-7xl  mx-auto flex items-center justify-between px-4 py-3">
         <motion.div
           initial={{ x: -200, opacity: 0, scale: 0.8 }}

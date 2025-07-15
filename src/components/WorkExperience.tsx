@@ -9,7 +9,7 @@ type Props = {
 
 const WorkExperience = ({ experiences }: Props) => {
   return (
-    <section className="relative w-full min-h-screen bg-black py-20 px-6">
+    <section className="relative w-full min-h-screen py-20 px-6">
       <h3 className="text-4xl  font-mono font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-16">
         Experience
       </h3>

@@ -14,20 +14,31 @@ export default function Contact({ pageInfo }: Props) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="relative w-full py-24 px-6 sm:px-10 bg-[#0b0c1a] overflow-hidden"
+      viewport={{ once: true, amount: 0.3 }}
+      className="relative w-full py-24 px-6 sm:px-10  overflow-hidden"
     >
-      <h3 className="text-4xl font-mono sm:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 mb-16">
+
+      <motion.h2
+        className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-300 tracking-[5px] font-mono  text-center "
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         Contact Me
-      </h3>
+      </motion.h2>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="max-w-xl mx-auto bg-[#161a2b] border border-white/10 shadow-md hover:shadow-yellow-400/20 transition rounded-2xl p-8 sm:p-12 space-y-10"
+        viewport={{ once: true }}
+        className="max-w-xl mx-auto   shadow-md  transition rounded-2xl p-8 sm:p-12 space-y-10"
       >
         <h4 className="text-xl sm:text-2xl font-semibold text-center text-white">
-          Let’s <span className="text-yellow-300 underline underline-offset-4">Connect</span>
+          Let’s
+          <span className="text-yellow-300 underline underline-offset-4">
+            Connect
+          </span>
         </h4>
 
         <div className="flex flex-col space-y-6 text-white">
@@ -35,6 +46,7 @@ export default function Contact({ pageInfo }: Props) {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="flex items-center space-x-4"
           >
             <PhoneIcon className="h-7 w-7 text-pink-400 animate-pulse" />
@@ -45,6 +57,7 @@ export default function Contact({ pageInfo }: Props) {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
             className="flex items-center space-x-4"
           >
             <EnvelopeIcon className="h-7 w-7 text-yellow-400 animate-pulse" />
@@ -55,6 +68,7 @@ export default function Contact({ pageInfo }: Props) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
             className="flex items-center space-x-4"
           >
             <MapIcon className="h-7 w-7 text-blue-400 animate-pulse" />
