@@ -4,6 +4,8 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "types.ds";
+import { FileDown } from "lucide-react";
+import { FileText } from "lucide-react";
 
 type Props = {
   socials: Social[];
@@ -34,6 +36,19 @@ export default function Header({ socials }: Props) {
               />
             </div>
           ))}
+<a
+  href="https://raw.githubusercontent.com/ps1437/HLD-LLD---master-series/main/Praveen_Soni_FullStack_java_developer_10_years.pdf"
+  download="Praveen_Soni.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-full  px-2 py-1 text-yellow-400 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_6px_#facc15]"
+>
+  <FileText className="h-4 w-4" />
+  <span className="text-sm font-mono">Resume</span>
+</a>
+
+
+
         </motion.div>
 
         <motion.nav
