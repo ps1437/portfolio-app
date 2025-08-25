@@ -70,3 +70,16 @@ export interface Experience extends Common {
     points: string[];
 }
 
+export interface ReferralRequest {
+  name: 'referralRequest',
+  title: 'Referral Request',
+  type: 'document',
+  fields: [
+    { name: 'name', title: 'Name', type: 'string' },
+    { name: 'contact', title: 'Contact Number', type: 'string' },
+    { name: 'resume', title: 'Resume Link', type: 'url' },
+    { name: 'refereeCompany', title: 'Referee Company Name', type: 'string' },
+    { name: 'currentCompany', title: 'Current Company Name', type: 'string' },
+    { name: 'jobId', title: 'Job ID / Link', type: 'string' },
+  ],
+};
