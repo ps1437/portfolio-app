@@ -63,7 +63,7 @@ export default function Hero({ pageInfo }: Props) {
 
             <div className="md:text-justify mb-3">
               <div className="flex flex-col mb-5">
-                <p className="text-indigo-900 font-bold text-xl">
+                <div className="text-indigo-900 font-bold text-xl">
                   <motion.h2
                     initial={{ y: 40, opacity: 0, scale: 0.95 }}
                     animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -74,7 +74,7 @@ export default function Hero({ pageInfo }: Props) {
                     Hey👋, I&apos;m {pageInfo.name}
                     <span className="block mx-auto mt-1 w-1/2 h-0.5 bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-400 rounded-full animate-pulse opacity-70" />
                   </motion.h2>
-                </p>
+                </div>
 
 
               </div>

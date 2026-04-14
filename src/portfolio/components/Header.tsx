@@ -78,14 +78,18 @@ export default function Header({ socials }: Props) {
           transition={{ delay: 0.6, duration: 1 }}
           className="md:hidden"
         >
-          <Link href="#contact">
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            aria-label="Scroll to contact"
+            className="hover:scale-110 transition-transform"
+          >
             <SocialIcon
               network="email"
               bgColor="transparent"
               fgColor="#facc15"
-              className="hover:scale-110 transition-transform"
+              className=""
             />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </header>

@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
 
 @tailwind base;
@@ -5,34 +7,45 @@
 @tailwind utilities;
 
 body {
-  cursor: url('/katana-cursor.png'), auto;
+  cursor: auto;
 }
 
 @font-face {
   font-family: 'woff2';
   src: url('CrampsRegular-OV7od.ttf') format('woff2'),
-    url('CrampsRegular-OV7od.ttf') format('woff');
+       url('CrampsRegular-OV7od.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
+/* ✅ Tailwind v4 safe components */
 @layer components {
   .hero-btn {
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-400 transition-all hover:border-secondary/100 hover:text-secondary/80
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-400 transition-all;
+  }
+
+  .hero-btn:hover {
+    border-color: #facc15;
+    color: #fde68a;
   }
 
   .header-title {
-    @apply top-16 text-xl md:top-10 md:text-2xl uppercase tracking-[20px] text-gray-500
+    @apply text-xl md:text-2xl uppercase text-gray-500;
+    letter-spacing: 20px;
+    position: relative;
+    top: 4rem;
   }
 
   .contact-container {
-    @apply flex items-center py-4 justify-center
+    @apply flex items-center justify-center py-4;
   }
 
   .contact-font {
-    @apply px-2 text-xl
+    @apply px-2 text-xl;
   }
 }
+
+/* ===== Effects ===== */
 
 .spark-container {
   position: relative;
@@ -50,7 +63,6 @@ body {
   }
 }
 
-
 .spark-layer::before {
   content: "";
   position: absolute;
@@ -59,7 +71,7 @@ body {
   width: 200%;
   height: 200%;
   background-image: radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#facc15 1px, transparent 1px);
+                    radial-gradient(#facc15 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
   animation: sparkleFloat 15s linear infinite;
@@ -76,30 +88,7 @@ body {
   }
 }
 
-
-
-.header-title {
-  top: 100px;
-  text-transform: uppercase;
-  letter-spacing: 15px;
-  font-size: 1.5rem;
-}
-
-
-.hero-btn {
-  padding: 0.5rem 1rem;
-  border: 2px solid white;
-  border-radius: 0.375rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-}
-
-@layer base {
-  html {
-    font-family: "Playfair Display";
-  }
-}
+/* ===== Lightning Effect ===== */
 
 @keyframes lightningGlow {
   0% {
@@ -125,130 +114,81 @@ body {
   pointer-events: none;
 }
 
+/* ===== Scrollbar ===== */
 
-/* width */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #5c5959;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #F7ab0A;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #F7ab0A;
 }
 
+/* ===== Wave Animation ===== */
 
 @keyframes wave {
-  0% {
-    transform: rotate(0.0deg)
-  }
-
-  10% {
-    transform: rotate(14.0deg)
-  }
-
-  20% {
-    transform: rotate(-8.0deg)
-  }
-
-  30% {
-    transform: rotate(14.0deg)
-  }
-
-  40% {
-    transform: rotate(-4.0deg)
-  }
-
-  50% {
-    transform: rotate(10.0deg)
-  }
-
-  60% {
-    transform: rotate(0.0deg)
-  }
-
-  100% {
-    transform: rotate(0.0deg)
-  }
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
 }
 
+/* ===== Spider Animation ===== */
 
 .spider-container {
   position: relative;
   width: 100vw;
 }
 
-.web-line {
-  position: absolute;
-  top: 0;
-  left: 80%;
-  width: 2px;
-  height: 0;
-  background-color: #000;
-  animation: drop-web 6s ease-in-out infinite;
-}
-
+.web-line,
 .web-line2 {
   position: absolute;
   top: 0;
-  left: 90%;
   width: 2px;
   height: 0;
   background-color: #000;
   animation: drop-web 6s ease-in-out infinite;
 }
 
+.web-line { left: 80%; }
+.web-line2 { left: 90%; }
+
+.spider,
 .spider2 {
   position: absolute;
   top: -50px;
-  left: 90%;
   transform: translateX(-50%);
-  width: 30px;
   animation: drop-spider 6s ease-in-out infinite;
 }
 
-.spider {
-  position: absolute;
-  top: -50px;
-  left: 80%;
-  transform: translateX(-50%);
-  width: 60px;
-  animation: drop-spider 6s ease-in-out infinite;
-}
+.spider { left: 80%; width: 60px; }
+.spider2 { left: 90%; width: 30px; }
 
 @keyframes drop-web {
-  0% {
-    height: 0;
-  }
-
-  50% {
-    height: 90%;
-  }
-
-  100% {
-    height: 0;
-  }
+  0% { height: 0; }
+  50% { height: 90%; }
+  100% { height: 0; }
 }
 
 @keyframes drop-spider {
-  0% {
-    top: -100px;
-  }
+  0% { top: -100px; }
+  50% { top: 90%; }
+  100% { top: -100px; }
+}
 
-  50% {
-    top: 90%;
-  }
+/* ===== Base ===== */
 
-  100% {
-    top: -100px;
+@layer base {
+  html {
+    font-family: "Playfair Display";
   }
 }
